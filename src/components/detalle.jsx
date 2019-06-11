@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ComicDetalle from '../components/detalleComic'
 
 class detail extends React.Component {

@@ -19,6 +19,7 @@ class tr extends React.Component {
     }
     async recuperaPersonaje(id) {
         let pers = await axios.get(url + id + api_key)
+        console.log('PERSP',pers)
         this.setState({ personaje: pers })
         let c = this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].resourceURI;
         let arraype = c.split('/')
@@ -36,8 +37,9 @@ class tr extends React.Component {
         } else {
             return (
                 <div>
-                    <img src={this.state.portadaComic.data.data.results[0].images[0].path + '.jpg'} />
+                    <img src={this.state.portadaComic.data.data.results[0].images[0].path +'.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
                     <h1>{this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].name}</h1>
+                    <p> {this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].description} </p>
                 </div>
             )
 

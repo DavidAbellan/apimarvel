@@ -1,5 +1,8 @@
 import React from 'react'
 import Axios from 'axios'
+import Comic from '../components/Comic'
+import {Link } from 'react-router-dom';
+
 
 class Comics extends React.Component {
     constructor(props) {
@@ -28,8 +31,10 @@ class Comics extends React.Component {
 
         } else {
             return (
+                
                 <div>
-                    {this.state.comics.map(a => <div> <h1>{a.title}</h1> <img src={a.thumbnail.path + '.jpg'} /></div>)
+                    
+                    {this.state.comics.map(a => <div> <Comic {...a} ></Comic>  </div>)
                     }
                 </div>
 
