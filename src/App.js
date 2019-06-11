@@ -5,14 +5,18 @@ import Personajes from '../src/components/personajes'
 import Detalle from '../src/components/detalle'
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import DetalleComic from '../src/components/detalleComic'
+import Barra from '../src/components/barraNav'
+import Comics from '../src/components/Comics'
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Barra></Barra>
       <Switch>
       <Route path="/" component={Personajes} exact />
       <Route path="/:id" component={Detalle} exact/>
       <Route path="/:id/:idComic" component={DetalleComic} exact/> 
+      <Route path="/comics/list/result" component={Comics} exact />
        
       </Switch>
      </BrowserRouter>
