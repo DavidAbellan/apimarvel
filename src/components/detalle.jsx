@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import ComicDetalle from '../components/detalleComic'
 
 class detail extends React.Component {
     constructor(props) {
@@ -11,13 +12,13 @@ class detail extends React.Component {
         this.persId = props.match.params.id
         this.url = 'https://gateway.marvel.com/v1/public/characters/'
         this.api_key = '?apikey=2416ff630c2380ca9a68e9d40a869c3f'
-        this.recuperaPeli()
+        this.recuperaPersonaje()
 
     }
 
-    async recuperaPeli() {
+    async recuperaPersonaje() {
         let per = await Axios.get(this.url + this.persId + this.api_key);
-        console.log(per.data.data.results)
+        console.log(per.data.data.results[0])
         this.setState(
             { pers: per.data.data.results[0] }
         )
@@ -31,7 +32,7 @@ class detail extends React.Component {
 
         if (this.state.pers == null) {
 
-            return <h1>Cargando...</h1>
+            return <h1>Loading...</h1>
 
 
         } else {
@@ -40,7 +41,12 @@ class detail extends React.Component {
                     <h1>{this.state.pers.name}</h1>
                     <img src={this.state.pers.thumbnail.path + '.' + this.state.pers.thumbnail.extension} />
                     {this.state.pers.description ? <h2>{this.state.pers.description}</h2> : <h1>No Description</h1>}
+                    <h2>features</h2>
+                    <ul>
+                    {this.state.pers.comics.items.map((c,index)=>
+                        { return <li><Link to={"/" + this.persId +"/"+ index} key={index}>{c.name}</Link></li>})}
                     <Link to='/' >back</Link>
+                    </ul>
                 </div>)
         }
 

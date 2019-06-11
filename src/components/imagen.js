@@ -1,6 +1,7 @@
 const imagen = {
-    width : 100,
-    height : 100
+    
+    width : '300pt',
+    height : '300pt'
 
 }
 

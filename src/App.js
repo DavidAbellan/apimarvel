@@ -4,6 +4,7 @@ import './App.css';
 import Personajes from '../src/components/personajes'
 import Detalle from '../src/components/detalle'
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import DetalleComic from '../src/components/detalleComic'
 function App() {
   return (
     <div className="App">
@@ -11,6 +12,7 @@ function App() {
       <Switch>
       <Route path="/" component={Personajes} exact />
       <Route path="/:id" component={Detalle} exact/>
+      <Route path="/:id/:idComic" component={DetalleComic} exact/> 
        
       </Switch>
      </BrowserRouter>

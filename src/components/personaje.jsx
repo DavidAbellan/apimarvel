@@ -7,8 +7,8 @@ function Personaje (props) {
      <div>
      <h1>{props.name}</h1>
      <h2>{props.description}</h2>
-     <img className={Imagen} src = {props.thumbnail.path + '.' + props.thumbnail.extension}/>
-     <Link to={"/" + props.id}>ver detalle... </Link>
+     <img style={Imagen} src = {props.thumbnail.path + '.' + props.thumbnail.extension}/>
+     <Link to={"/" + props.id}>See details... </Link>
      </div>
 
   )
