@@ -6,9 +6,10 @@ class barra extends React.Component {
 
     render() {
         return (
-        <div>
-            <NavLink to='/'>Heroes</NavLink>
-            <NavLink to='/comics/list/result'>Comics </NavLink>
+        <div className="cabecera">
+            <NavLink className="btncb" to='/'>Heroes</NavLink>
+            <NavLink className="btncb" to='/comics/list/result'>Comics </NavLink>
+            <h1>MARVEL CLASS HEROES</h1>
         </div>
         )
     }

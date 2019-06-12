@@ -4,9 +4,9 @@ import Imagen from '../components/imagen'
  
 function Personaje (props) {
   return (
-     <div>
+     <div class="personaje">
      <h1>{props.name}</h1>
-     <h2>{props.description}</h2>
+     <p>{props.description}</p>
      <img style={Imagen} src = {props.thumbnail.path + '.' + props.thumbnail.extension}/>
      <Link to={"/" + props.id}>See details... </Link>
      </div>

@@ -17,23 +17,27 @@ class tr extends React.Component {
         }
         this.id = props.match.params.id;
         this.recuperaPersonaje(this.id);
-
+        
     }
     async recuperaPersonaje(id) {
         let pers = await axios.get(url + id + api_key)
-        console.log('PERSP', pers)
         this.setState({ personaje: pers })
+        this.recuperaComic();
+
+    }
+    async recuperaComic() {
         let c = this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].resourceURI;
         let arraype = c.split('/')
         let comicid = arraype[arraype.length - 1];
         let com = await axios.get(url_c + comicid + api_key);
         this.setState({ portadaComic: com })
 
+
     }
-    recortaId(url){
+    recortaId(url) {
         let arr = url.split('/');
         return arr[arr.length - 1]
-    
+
     }
     render() {
         if (this.state.personaje == null || this.state.portadaComic == null) {
@@ -45,15 +49,15 @@ class tr extends React.Component {
                     <img src={this.state.portadaComic.data.data.results[0].images[0].path + '.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
                     <h1>{this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].name}</h1>
                     <p> {this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].description} </p>
-    
+
                     <h1>Characters</h1>
                     <ul>
                         {this.state.portadaComic.data.data.results[0].characters.items.length !== 0 ? this.state.portadaComic.data.data.results[0].characters.items.map(a => <li> <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link> </li>) : <p>Unknow Characters</p>}
                     </ul>
-    
+
                 </div>
             )
-}
+        }
 
 
 

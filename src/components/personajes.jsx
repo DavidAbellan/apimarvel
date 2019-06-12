@@ -24,7 +24,7 @@ class Personajes extends React.Component {
          
              
              return (
-             <div>
+             <div >
                  {this.state.arrayPersonajes.map((a,index) =><Personaje key={index} {...a} ></Personaje> )}
              </div> )
              
