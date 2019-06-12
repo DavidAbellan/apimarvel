@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 const api_key = '?apikey=2416ff630c2380ca9a68e9d40a869c3f'
 const url = 'https://gateway.marvel.com/v1/public/characters/'
 const url_c = 'https://gateway.marvel.com/v1/public/comics/'
@@ -19,7 +21,7 @@ class tr extends React.Component {
     }
     async recuperaPersonaje(id) {
         let pers = await axios.get(url + id + api_key)
-        console.log('PERSP',pers)
+        console.log('PERSP', pers)
         this.setState({ personaje: pers })
         let c = this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].resourceURI;
         let arraype = c.split('/')
@@ -28,8 +30,11 @@ class tr extends React.Component {
         this.setState({ portadaComic: com })
 
     }
-
-
+    recortaId(url){
+        let arr = url.split('/');
+        return arr[arr.length - 1]
+    
+    }
     render() {
         if (this.state.personaje == null || this.state.portadaComic == null) {
             return (
@@ -37,19 +42,29 @@ class tr extends React.Component {
         } else {
             return (
                 <div>
-                    <img src={this.state.portadaComic.data.data.results[0].images[0].path +'.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
+                    <img src={this.state.portadaComic.data.data.results[0].images[0].path + '.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
                     <h1>{this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].name}</h1>
                     <p> {this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].description} </p>
+    
+                    <h1>Characters</h1>
+                    <ul>
+                        {this.state.portadaComic.data.data.results[0].characters.items.length !== 0 ? this.state.portadaComic.data.data.results[0].characters.items.map(a => <li> <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link> </li>) : <p>Unknow Characters</p>}
+                    </ul>
+    
                 </div>
             )
+}
 
-        }
+
 
 
     }
 
 
 }
+
+
+
 
 
 export default tr;
