@@ -4,7 +4,7 @@ import Imagen from '../components/imagen'
  
 function Personaje (props) {
   return (
-     <div class="personaje">
+     <div className="personaje">
      <h1>{props.name}</h1>
      <p>{props.description}</p>
      <img style={Imagen} src = {props.thumbnail.path + '.' + props.thumbnail.extension}/>

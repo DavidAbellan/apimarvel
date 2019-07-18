@@ -6,8 +6,8 @@ function comic(props){
     console.log(props)
     return(
         <div>
-            <img style={imagenStilo} src={props.thumbnail.path + '.jpg'}/>
             <h1>{props.title} </h1>
+            <img style={imagenStilo} src={props.thumbnail.path + '.jpg'}/>
             <Link to={"/result/comic/path/" + props.id }>See more...</Link>
            
         </div>

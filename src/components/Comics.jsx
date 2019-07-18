@@ -32,7 +32,7 @@ class Comics extends React.Component {
         } else {
             return (
                 
-                <div>
+                <div className="container">
                     
                     {this.state.comics.map(a => <div> <Comic {...a} ></Comic>  </div>)
                     }
