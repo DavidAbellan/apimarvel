@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.64bc40f0.chunk.css",
+    "main.js": "./static/js/main.d894deaf.chunk.js",
+    "main.js.map": "./static/js/main.d894deaf.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/js/2.8aa8ebee.chunk.js": "./static/js/2.8aa8ebee.chunk.js",
+    "static/js/2.8aa8ebee.chunk.js.map": "./static/js/2.8aa8ebee.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.a301888469ba5a8de5b401fa0f87b44c.js": "./precache-manifest.a301888469ba5a8de5b401fa0f87b44c.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.64bc40f0.chunk.css.map": "./static/css/main.64bc40f0.chunk.css.map",
+    "static/media/logo.svg": "./static/media/logo.ee7cd8ed.svg",
+    "static/media/stilos.css": "./static/media/marvel-twitter-header.560ad6e2.jpg"
+  }
+}
