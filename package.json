@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
-  "deploy": "build --prod --output-path docs --base-href /reactMarvelHeroes/",
   "dependencies": {
     "axios": "^0.19.0",
     "github-pages": "^3.0.2",
@@ -16,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "docs": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
