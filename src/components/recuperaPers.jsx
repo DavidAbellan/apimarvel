@@ -30,15 +30,15 @@ class personaje extends React.Component {
             )
         } else {
             return (
-                <div>
+                <div className="comicDetail">
                     <img src={this.state.personaje.thumbnail.path + '.' + this.state.personaje.thumbnail.extension} />
                     <h1>{this.state.personaje.name}</h1>
                     {this.state.personaje.description ? <p>{this.state.personaje.description}</p> : <p>No description available</p>}
                     <h1>Features</h1>
-                    <ul>
-                        {this.state.personaje.comics.items.map((c, index) => { return <li><Link to={"/" + this.idPersonaje + "/" + index} key={index}>{c.name}</Link></li> })}
+                    
+                        {this.state.personaje.comics.items.map((c, index) => { return <Link to={"/" + this.idPersonaje + "/" + index} key={index}>{c.name}</Link> })}
                         <Link to='/' >back</Link>
-                    </ul>
+                    
                 </div>
             )
         }

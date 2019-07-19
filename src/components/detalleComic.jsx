@@ -45,15 +45,16 @@ class tr extends React.Component {
                 <h1>Working on...</h1>)
         } else {
             return (
-                <div>
-                    <img src={this.state.portadaComic.data.data.results[0].images[0].path + '.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
+                <div  className="comicDetail">
+                    <img src={this.state.portadaComic.data.data.results[0].images[0].path + 
+                        '.' + this.state.portadaComic.data.data.results[0].images[0].extension} />
                     <h1>{this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].name}</h1>
                     <p> {this.state.personaje.data.data.results[0].comics.items[this.state.posicionComic].description} </p>
 
                     <h1>Characters</h1>
-                    <ul>
-                        {this.state.portadaComic.data.data.results[0].characters.items.length !== 0 ? this.state.portadaComic.data.data.results[0].characters.items.map(a => <li> <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link> </li>) : <p>Unknow Characters</p>}
-                    </ul>
+                    
+                        {this.state.portadaComic.data.data.results[0].characters.items.length !== 0 ? this.state.portadaComic.data.data.results[0].characters.items.map(a =>  <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link>) : <p>Unknow Characters</p>}
+                    
 
                 </div>
             )

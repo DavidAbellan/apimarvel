@@ -37,16 +37,14 @@ class detail extends React.Component {
 
         } else {
             return (
-                <div>
+                <div className="comicDetail">
                     <h1>{this.state.pers.name}</h1>
                     <img src={this.state.pers.thumbnail.path + '.' + this.state.pers.thumbnail.extension} />
                     {this.state.pers.description ? <h2>{this.state.pers.description}</h2> : <h1>No Description</h1>}
                     <h2>features</h2>
-                    <ul>
                     {this.state.pers.comics.items.map((c,index)=>
-                        { return <li><Link to={"/" + this.persId +"/"+ index} key={index}>{c.name}</Link></li>})}
+                        { return <Link to={"/" + this.persId +"/"+ index} key={index}>{c.name}</Link>})}
                     <Link to='/' >back</Link>
-                    </ul>
                 </div>)
         }
 

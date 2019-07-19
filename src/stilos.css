@@ -129,5 +129,20 @@ p {
   display: flex;
   flex-flow: column wrap;
 }
+.infinite {
+  height:700px;
+  overflow:auto;
+
+}
+.comicContainer {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;}
+
+.comicDetail { 
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}  
 
 /*# sourceMappingURL=stilos.css.map */

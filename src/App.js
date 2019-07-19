@@ -8,7 +8,6 @@ import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import DetalleComic from '../src/components/detalleComic'
 import Barra from '../src/components/barraNav'
 import Comics from '../src/components/Comics'
-import Comic from '../src/components/Comic'
 import ComicDetalle from '../src/components/ComicDetalle'
 import Rpersonaje from '../src/components/recuperaPers'
 function App() {

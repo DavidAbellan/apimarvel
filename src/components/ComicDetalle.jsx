@@ -38,14 +38,14 @@ class detalle extends React.Component {
             )
         }
         return (
-            <div>
+            <div className="comicDetail">
                 <img src={this.state.comic.thumbnail.path + '.jpg'} />
                 <h1>{this.state.comic.title}</h1>
                 <p>{this.state.comic.description}</p>
                 <h1>Characters</h1>
                 <ul>
                     
-                    {this.state.comic.characters.items.length !== 0 ? this.state.comic.characters.items.map(a =><li> <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link> </li>) :<p>Unknow Characters</p>}
+                    {this.state.comic.characters.items.length !== 0 ? this.state.comic.characters.items.map(a => <Link to={"/result/personaje/ch/" + this.recortaId(a.resourceURI)} >{a.name}</Link> ) :<p>Unknow Characters</p>}
                    
                     {console.log(this.state.comic.characters.items) }
 
