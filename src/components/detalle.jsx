@@ -17,7 +17,7 @@ class detail extends React.Component {
     }
 
     async recuperaPersonaje() {
-        let per = await Axios.get(this.url + this.persId + this.api_key);
+        let per = await Axios.get(this.url + this.persId +this.api_key);
         console.log(per.data.data.results[0])
         this.setState(
             { pers: per.data.data.results[0] }
