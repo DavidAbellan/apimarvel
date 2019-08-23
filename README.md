@@ -1,6 +1,6 @@
 #####DEMO-VERSION #####
 
-https://davidabellan.github.io
+https://davidabellan.github.io/react-apimarvel/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
